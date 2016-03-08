@@ -7,6 +7,7 @@ use Illuminate\Foundation\Console\Kernel as ConsoleKernel;
 
 class Kernel extends ConsoleKernel
 {
+
     /**
      * The Artisan commands provided by your application.
      *
@@ -27,4 +28,11 @@ class Kernel extends ConsoleKernel
         // $schedule->command('inspire')
         //          ->hourly();
     }
+
+    /**
+     *Overriding parent class
+     *the bootstrap classes for the application
+     *
+     *@var array
+     */
 }

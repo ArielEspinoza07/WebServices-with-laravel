@@ -24,6 +24,8 @@ class RoleController extends Controller
   {
     # code...
     $role = Role::all();
+    Log::info('showing all roles to: ', ['name' => 'Auth::user()->name',
+              ' username ' => 'Auth::user()->username',' email ' => 'Auth::user()->email', ' date ' => $this->date]);
     return Response::json($role,200);
   }
 
@@ -32,7 +34,7 @@ class RoleController extends Controller
     # code...
     $role = Role::find($id);
     if($role){
-      Log::info('showing role '.$role->name.' description '.$role->description.' for user: ', ['name' => 'Auth::user()->name', 
+      Log::info('showing role '.$role->name.' description '.$role->description.' to: ', ['name' => 'Auth::user()->name',
                 ' username ' => 'Auth::user()->username',' email ' => 'Auth::user()->email', ' date ' => $this->date]);
       return Response::json($role,200);
     }else{
